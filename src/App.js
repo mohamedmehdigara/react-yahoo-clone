@@ -1,7 +1,9 @@
 import React from 'react';
 import Header from './components/Header';
-import NewsList from './components/NewsList';
 import Sidebar from './components/Sidebar';
+import NewsList from './components/NewsList';
+import SearchBar from './components/SearchBar';
+import Footer from './components/Footer';
 import "./App.css";
 
 function App() {
@@ -10,8 +12,12 @@ function App() {
       <Header />
       <div className="container">
         <Sidebar />
-        <NewsList />
+        <div className="main-content">
+          <SearchBar />
+          <NewsList />
+        </div>
       </div>
+      <Footer />
     </div>
   );
 }
