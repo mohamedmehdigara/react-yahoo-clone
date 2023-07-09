@@ -1,6 +1,5 @@
 import React from 'react';
 import Header from './components/Header';
-import Sidebar from './components/Sidebar';
 import NewsList from './components/NewsList';
 import SearchBar from './components/SearchBar';
 import Footer from './components/Footer';
@@ -11,7 +10,6 @@ function App() {
     <div>
       <Header />
       <div className="container">
-        <Sidebar />
         <div className="main-content">
           <SearchBar />
           <NewsList />
