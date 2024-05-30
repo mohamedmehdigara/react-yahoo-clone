@@ -6,7 +6,7 @@ const NewsList = ({ emails }) => {
   return (
     <div className="news-list">
       {/* ... */}
-      {emails.map((email) => (
+      {emails&&emails.map((email) => (
         <EmailView key={email.id} email={email} />
       ))}
     </div>
