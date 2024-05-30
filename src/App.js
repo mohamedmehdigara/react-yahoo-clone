@@ -1,13 +1,14 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './components/Header'; // Assuming Header component
+import Header from "./components/Header"
 import Footer from './components/Footer'; // Assuming Footer component
 import EmailList from './components/EmailList'; // Assuming EmailList component
 import SearchResults from './components/SearchResults'; // Assuming SearchResults component
 import ComposeEmail from './components/ComposeEmail'; // Assuming ComposeEmail component
 import EmailView from './components/EmailView'; // Assuming EmailView component
-import NewsCard from './components/NewsCard'; // Assuming NewsCard component
-import SearchBar from './components/SearchBar'; // Assuming SearchBar component
+import NewsCard from "./components/NewsCard"
+import SearchBar from "./components/SearchBar"
+import Sidebar from './components/Sidebar';
 import NewsList from './components/NewsList';
 
 const App = () => {
@@ -29,7 +30,8 @@ const App = () => {
     <Router>
       <div className="app">
         <Header />  {/* Render the Header component */}
-        <main>
+        <main className="main-content">
+          <Sidebar /> {/* Render the Sidebar component */}
           <Routes>
             <Route
               path="/"
