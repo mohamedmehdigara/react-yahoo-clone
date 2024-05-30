@@ -15,16 +15,47 @@ body {
   background-color: #400080;
   color: #fff;
   padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center elements vertically */
 }
 
 .header h1 {
   margin: 0;
+  flex: 1;
+}
+
+.header .logo {
+  /* Add styles for logo image or text */
+}
+
+.header .search-bar {
+  /* Move search bar styles to a separate class for reusability */
+  /* Consider using a dedicated search bar component */
 }
 
 .news-list {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-gap: 20px;
+}
+
+.news-list-item {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out; /* Add smooth hover effect */
+}
+
+.news-list-item:hover {
+  background-color: #f9f9f9;
+  transform: scale(1.01); /* Subtle hover zoom effect */
+}
+
+.news-list-item .news-title {
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 .email-list {
@@ -37,6 +68,8 @@ body {
   border-bottom: 1px solid #ccc;
   padding: 10px;
   cursor: pointer;
+  display: flex; /* Allow for inline elements like unread indicator */
+  align-items: center;
 }
 
 .email-list-item:last-child {
@@ -47,12 +80,27 @@ body {
   background-color: #f9f9f9;
 }
 
+.email-list-item .unread-indicator {
+  margin-right: 10px;
+  background-color: #f00;
+  color: #fff;
+  padding: 3px 5px;
+  border-radius: 3px;
+  display: none; /* Initially hide unread indicator */
+}
+
+.email-list-item.unread .unread-indicator {
+  display: inline-block; /* Show unread indicator for unread emails */
+}
+
 .email-list-item .email-sender {
   font-weight: bold;
+  flex: 1; /* Allow sender name to expand */
 }
 
 .email-list-item .email-subject {
   font-weight: bold;
+  margin-left: 10px;
 }
 
 .email-view {
@@ -85,9 +133,12 @@ body {
 
 /* Responsive layout for smaller screens */
 @media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .news-list {
-    display: block;
+    grid-template-columns: 1fr;
   }
 }
-
-/* Add your own custom styles and adjustments here */

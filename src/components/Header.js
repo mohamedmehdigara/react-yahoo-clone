@@ -4,7 +4,9 @@ const Header = () => {
   return (
     <header className="header">
       <div className="logo">
-        <img src="https://s.yimg.com/rz/p/yahoo_frontpage_en-US_s_f_p_bestfit_frontpage_2x.png" alt="Yahoo Logo" />
+        <a href="https://www.yahoo.com/">  {/* Link to Yahoo Homepage */}
+          <img src="https://s.yimg.com/rz/p/yahoo_frontpage_en-US_s_f_p_bestfit_frontpage_2x.png" alt="Yahoo Logo" />
+        </a>
       </div>
       <div className="search-bar">
         <input type="text" placeholder="Search Yahoo" />

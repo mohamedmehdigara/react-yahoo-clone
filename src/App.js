@@ -1,30 +1,31 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
-import NewsList from './components/NewsList';
-import SearchBar from './components/SearchBar';
 import Footer from './components/Footer';
-import "./App.css";
-import ComposeEmail from './components/ComposeEmail';
-import EmailView from './components/EmailView';
+import EmailList from './components/EmailList'; // Assuming you have an EmailList component
+import SearchResults from './components/SearchResults'; // Assuming you have a SearchResults component
 
 function App() {
+  // Sample email data (replace with actual data fetching logic)
   const emails = [
-    { id: 1, sender: 'john.doe@example.com', subject: 'Hello!', timestamp: 'Today, 10:30 AM', content: 'Hi there, how are you?' },
-    // Add more email data here
+    { id: 1, sender: 'John Doe', subject: 'Important Meeting', timestamp: '2024-05-31' },
+    { id: 2, sender: 'Jane Smith', subject: 'Regarding your order', timestamp: '2024-05-30' },
+    // ... more emails
   ];
+
   return (
-    <div>
-      <Header />
-      <div className="container">
-        <div className="main-content">
-          <ComposeEmail/>
-          <EmailView/>
-          <SearchBar />
-          <NewsList emails={emails} />
-        </div>
+    <Router>
+      <div className="app">
+        <Header />
+        <main>
+          <Routes>
+            <Route path="/" element={<EmailList emails={emails} />} />
+            <Route path="/search" element={<SearchResults />} />
+          </Routes>
+        </main>
+        <Footer />
       </div>
-      <Footer />
-    </div>
+    </Router>
   );
 }
 
