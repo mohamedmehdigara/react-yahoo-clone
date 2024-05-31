@@ -5,14 +5,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'; // Assuming yo
 const StyledHeader = styled.header`
   display: flex; /* Allow logo and search bar to sit side-by-side */
   justify-content: space-between; /* Align logo and search bar to opposite sides */
-  align-items: center; /* Vertically center logo and search bar */
   padding: 10px 20px; /* Add padding for spacing */
   background-color: #fff; /* Set background color */
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add subtle shadow */
 `;
 
+// Center the logo using a flexbox container
+const StyledLogoContainer = styled.div`
+  display: flex; /* Create a flexbox container */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  /* Adjust width or flex-grow if needed for logo positioning */
+`;
+
 const StyledLogo = styled.div`
-  display: flex; /* Allow for logo image and text alignment */
+  display: grid; /* Allow for logo image and text alignment */
   align-items: center;
 `;
 
@@ -53,12 +60,15 @@ const StyledSearchButton = styled.button`
 const Header = () => {
   return (
     <StyledHeader>
-      <StyledLogo>
-        <StyledLogoLink href="https://www.yahoo.com/">
-          <StyledLogoImage src="https://s.yimg.com/rz/p/yahoo_frontpage_en-US_s_f_p_bestfit_frontpage_2x.png" alt="Yahoo Logo" />
-          {/* Optionally add logo text next to image */}
-        </StyledLogoLink>
-      </StyledLogo>
+      {/* Wrap the logo in the StyledLogoContainer to center it */}
+      <StyledLogoContainer>
+        <StyledLogo>
+          <StyledLogoLink href="https://www.yahoo.com/">
+            <StyledLogoImage src="https://s.yimg.com/rz/p/yahoo_frontpage_en-US_s_f_p_bestfit_frontpage_2x.png" alt="Yahoo Logo" />
+            {/* Optionally add logo text next to image */}
+          </StyledLogoLink>
+        </StyledLogo>
+      </StyledLogoContainer>
       <StyledSearchBar>
         <StyledSearchInput type="text" placeholder="Search Yahoo" />
         <StyledSearchButton>
@@ -70,4 +80,3 @@ const Header = () => {
 };
 
 export default Header;
-
