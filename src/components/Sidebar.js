@@ -53,6 +53,9 @@ const Sidebar = () => {
         <StyledSidebarNavItem>
           <StyledSidebarNavLink to="/Contacts">Contacts</StyledSidebarNavLink>
         </StyledSidebarNavItem>
+        <StyledSidebarNavItem>
+          <StyledSidebarNavLink to="ToggleButton">Toggle button</StyledSidebarNavLink>
+        </StyledSidebarNavItem>
         {/* Add navigation links for other sections if needed */}
       </StyledSidebarNav>
     </StyledSidebar>

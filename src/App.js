@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header"
 import Footer from './components/Footer'; // Assuming Footer component
@@ -10,8 +10,13 @@ import NewsCard from "./components/NewsCard"
 import SearchBar from "./components/SearchBar"
 import Sidebar from './components/Sidebar';
 import NewsList from './components/NewsList';
+import Inbox from './components/Inbox';
+import ToggleButton from './components/ToggleButton';
 
 const App = () => {
+
+  const [isSidebarVisible, setIsSidebarVisible] = useState(false); // State to track sidebar visibility
+
   // Sample email data (replace with actual data fetching logic)
   const emails = [
     { id: 1, sender: 'John Doe', subject: 'Important Meeting', timestamp: '2024-05-31', unread: true },
@@ -31,8 +36,8 @@ const App = () => {
       <div className="app">
         <Header />  {/* Render the Header component */}
         <main className="main-content">
-          <Sidebar /> {/* Render the Sidebar component */}
-          <Routes>
+        <Sidebar isVisible={isSidebarVisible} />
+                  <Routes>
             <Route
               path="/"
               element={
@@ -46,9 +51,11 @@ const App = () => {
                 </>
               }
             />
+            <Route path="/togglebutton" element={<ToggleButton />} />  {/* Render SearchResults */}
             <Route path="/search" element={<SearchResults />} />  {/* Render SearchResults */}
             <Route path="/compose" element={<ComposeEmail />} />  {/* Render ComposeEmail */}
             <Route path="/email/:emailId" element={<EmailView emails={emails} />} /> {/* Render EmailView with emailId */}
+            <Route path="/Inbox" element={<Inbox />} />
           </Routes>
         </main>
         <Footer />  {/* Render the Footer component */}
