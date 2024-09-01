@@ -56,6 +56,7 @@ const App = () => {
             <Route path="/compose" element={<ComposeEmail />} />  {/* Render ComposeEmail */}
             <Route path="/email/:emailId" element={<EmailView emails={emails} />} /> {/* Render EmailView with emailId */}
             <Route path="/Inbox" element={<Inbox />} />
+
           </Routes>
         </main>
         <Footer />  {/* Render the Footer component */}
