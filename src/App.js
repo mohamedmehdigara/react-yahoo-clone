@@ -13,6 +13,7 @@ import NewsList from './components/NewsList';
 import Inbox from './components/Inbox';
 import ToggleButton from './components/ToggleButton';
 import Calendar from './components/Calendar';
+import Contacts from './components/Contacts';
 
 const App = () => {
 
@@ -58,6 +59,8 @@ const App = () => {
             <Route path="/email/:emailId" element={<EmailView emails={emails} />} /> {/* Render EmailView with emailId */}
             <Route path="/Inbox" element={<Inbox />} />
             <Route path="/Calendar" element={<Calendar />} />
+            <Route path="/Contacts" element={<Contacts />} />
+
 
 
           </Routes>

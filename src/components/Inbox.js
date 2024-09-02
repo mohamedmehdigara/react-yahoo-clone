@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 const InboxContainer = styled.div`
@@ -8,6 +8,7 @@ const InboxContainer = styled.div`
 const InboxContent = styled.div`
   flex: 1; /* Allow content to fill remaining space */
   padding: 20px;
+  margin-left: 200px;
 `;
 
 const EmailList = styled.ul`
@@ -53,7 +54,6 @@ const Inbox = () => {
 
   return (
     <InboxContainer>
-      {/* Content on the right side */}
       <InboxContent>
         <h2>Inbox</h2>
         <EmailList>
