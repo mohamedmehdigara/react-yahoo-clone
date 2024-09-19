@@ -15,6 +15,7 @@ import ToggleButton from './components/ToggleButton';
 import Calendar from './components/Calendar';
 import Contacts from './components/Contacts';
 import Settings from './components/Settings';
+import Search from './components/Search';
 
 const App = () => {
 
@@ -62,6 +63,8 @@ const App = () => {
             <Route path="/Calendar" element={<Calendar />} />
             <Route path="/Contacts" element={<Contacts />} />
             <Route path="/Settings" element={<Settings />} />
+            <Route path="/Search" element={<Search />} />
+
 
 
 

@@ -3,14 +3,8 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 const StyledSidebar = styled.aside`
- background-color: #eee; /* Add background color */
- padding: 20px; /* Add padding for content */
- height: 100vh; /* Set sidebar height to 100vh (full viewport height) */
- position: fixed; /* Fix sidebar to the left side of the screen */
- top: 0; /* Position sidebar at the top of the viewport */
- left: 0; /* Position sidebar at the left edge of the viewport */
- width: 200px; /* Set sidebar width */
- box-sizing: border-box; /* Include padding in width calculation */
+ 
+ margin-right: 400px;
 `;
 
 const StyledSidebarNav = styled.ul`
@@ -61,6 +55,9 @@ const Sidebar = () => {
         </StyledSidebarNavItem>
         <StyledSidebarNavItem>
           <StyledSidebarNavLink to="/Settings">Settings</StyledSidebarNavLink>
+        </StyledSidebarNavItem>
+        <StyledSidebarNavItem>
+          <StyledSidebarNavLink to="/Search">Search</StyledSidebarNavLink>
         </StyledSidebarNavItem>
         {/* Add navigation links for other sections if needed */}
       </StyledSidebarNav>
