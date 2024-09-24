@@ -57,7 +57,23 @@ const StyledSearchButton = styled.button`
   }
 `;
 
+const StyledNotifications = styled.div`
+  position: relative; /* Needed for icon positioning */
+  cursor: pointer; /* Indicate clickable behavior for notifications */
+`;
+
+const StyledNotificationsIcon = styled(FontAwesomeIcon)`
+  font-size: 20px;
+  color: black; /* Adjust icon color */
+  position: absolute; /* Position icon within notification area */
+  top: 50%;
+  transform: translateY(-50%); /* Center icon vertically */
+  right: 100px; /* Position icon on the right */
+`;
+
 const Header = () => {
+  // ... (your notifications logic here)
+
   return (
     <StyledHeader>
       {/* Wrap the logo in the StyledLogoContainer to center it */}
@@ -75,6 +91,10 @@ const Header = () => {
           <FontAwesomeIcon icon="search" /> {/* Assuming FontAwesome icon */}
         </StyledSearchButton>
       </StyledSearchBar>
+      {/* Add the Notifications component */}
+      <StyledNotifications>
+        <StyledNotificationsIcon icon="bell" />
+      </StyledNotifications>
     </StyledHeader>
   );
 };
